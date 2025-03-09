@@ -2,6 +2,8 @@
 // src/router/index.js
 import { createRouter, createWebHashHistory } from 'vue-router'
 import store from '@/store'
+import HomeView from '../views/HomeView.vue';
+
 
 // Import views or use lazy loading
 const HomeView = () => import('@/views/HomeView.vue')
