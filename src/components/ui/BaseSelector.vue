@@ -26,10 +26,7 @@
         <div 
           v-for="option in options" 
           :key="option.id"
-          :class="[
-            'selector-option',
-            { 'selected': isSelected(option.id) }
-          ]"
+          :class="['selector-option', { 'selected': isSelected(option.id) }]"
           @click="selectOption(option)"
         >
           <div class="option-content">
@@ -37,7 +34,7 @@
               <img 
                 :src="option.image" 
                 :alt="option.name"
-                @error="(e) => handleImageError(e, option)"
+                @error="handleImageError($event, option)"
               />
             </div>
             <div class="option-details">
@@ -73,7 +70,7 @@
               <img 
                 :src="option.image" 
                 :alt="option.name"
-                @error="(e) => handleImageError(e, option)"
+                @error="handleImageError($event, option)"
               />
             </div>
             <div class="option-details">
@@ -283,7 +280,7 @@ export default {
         // Hide the broken image
         event.target.style.display = 'none'
         
-        // Create a colored background based on option ID
+        // Get the parent element (color-preview div)
         const container = event.target.parentNode
         
         // Set a background color
@@ -353,7 +350,8 @@ export default {
       selectOption,
       toggleOption,
       onDropdownChange,
-      handleImageError
+      handleImageError,
+      getColorForOption
     }
   }
 }
@@ -391,8 +389,6 @@ export default {
 .selector-options--list {
   flex-direction: column;
 }
-
-<!-- Continuing the BaseSelector.vue style section -->
 
 .selector-options--has-images .selector-option {
   flex-direction: column;

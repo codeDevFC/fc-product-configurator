@@ -2,5 +2,14 @@
   "dependencies": {
     "gh-pages": "^6.3.0",
     "uuid": "^11.1.0"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "@vue/compiler-sfc": "^3.5.13"
   }
 }
