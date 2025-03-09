@@ -56,3 +56,5 @@ try {
   document.getElementById('app-fallback').style.display = 'block'
   document.getElementById('app-loading').style.display = 'none'
 }
+
+
